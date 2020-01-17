@@ -45,7 +45,8 @@ int Date::DaysInMonth(int month, int year) const {
         return 31;
 }
 
-bool Date::LeapYear(int year) const {
+bool Date::LeapYear(int year) const 
+{
     if(year % 4 != 0)
         return false;
     else if(year % 100 != 0)
