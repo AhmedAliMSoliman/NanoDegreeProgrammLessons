@@ -9,4 +9,6 @@ int main()
     std::cout << str << "\n";
     memset(str, '@' , 11);
     std::cout << str << "\n";
+
+    
 }
