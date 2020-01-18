@@ -16,19 +16,44 @@
 #include <stdexcept>
 
 // TODO: Define class Sphere
-class Sphere {
+class Sphere 
+{
  public:
   // Constructor
+  Sphere(int r) : radius_(r) , volume_(pi_ * 4/3 * pow(radius_,3))
+  {
+    Validator();
+  }
 
   // Accessors
+  float Radius()
+  {
+    return radius_;
+  }
+  float Volume()
+  {
+    return volume_;
+  }
+
 
  private:
   // Private members
+  float pi_{3.14};
+  int radius_;
+  float volume_;
+  void Validator()
+  {
+    if (radius_ < 0)
+       throw std::invalid_argument("Invalid raduis");
+  }
+
 };
 
 // Test
-int main(void) {
+int main(void) 
+{
   Sphere sphere(5);
   assert(sphere.Radius() == 5);
   assert(abs(sphere.Volume() - 523.6) < 1);
+
 }
