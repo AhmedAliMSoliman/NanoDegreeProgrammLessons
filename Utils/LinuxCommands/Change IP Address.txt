@@ -1,0 +1,24 @@
+sudo nano /etc/network/interfaces
+
+
+auto eth0
+iface eth0 inet static
+address 197.251.80.23
+netmask 255.255.255.0
+network 197.251.80.0
+broadcast 197.251.80.255
+gateway 197.251.80.1
+dns-nameservers 197.251.80.1
+
+
+
+sudo nano /etc/resolv.conf
+
+
+sudo apt-get remove dhcp-client
+
+
+
+
+centOS:
+nano /etc/sysconfig/network-scripts/ifcfg-eth0

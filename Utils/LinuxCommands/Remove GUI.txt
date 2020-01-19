@@ -1,0 +1,37 @@
+Ubuntu Server is for exactly this kind of use. It operates in terminal mode all of the time, and takes up much less space as it doesn't contain all of the packages required for the GUI and other associated software.
+
+If you wish to use your current Ubuntu Desktop installation in terminal mode, you can press:
+
+Ctrl+Alt+F1
+
+To switch to a virtual terminal. To get back to the GUI use:
+
+Ctrl+Alt+F7
+
+edit the /etc/default/grub file
+
+
+* Comment out the GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”, by adding # at the beginning of the line, which will disable the Ubuntu purple screen.
+* Change GRUB_CMDLINE_LINUX="" to GRUB_CMDLINE_LINUX=”text”, this makes Ubuntu boot directly into Text Mode.
+* Uncomment this line #GRUB_TERMINAL=console, by removing the # at the beginning, this makes Grub Menu into real black & white Text Mode
+So you'll end up with:
+
+#GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”
+GRUB_CMDLINE_LINUX=”text”
+GRUB_TERMINAL=console
+
+In your /etc/default/grub file. Now it's time to put these changes into effect with:
+
+sudo update-grub
+
+
+For Ubuntu 15.04 and later
+
+There is one further step for Ubuntu versions which use systemd by default. It's necessary to change the default target from "graphical" target to "multi-user" target.
+
+sudo systemctl set-default multi-user.target
+You can always revert to desktop boot later by restoring GRUB config file and running:
+
+sudo systemctl set-default graphical.target
+Now, when rebooting, you should find yourself in a lovely console only environment.
+

@@ -1,0 +1,5 @@
+ssh 					// check ssh is install
+ssh localhost 				// check ssh server
+sudo apt-get install openssh-server	// install ssh
+sudo service ssh status			//status
+sudo nano /etc/ssh/sshd_config

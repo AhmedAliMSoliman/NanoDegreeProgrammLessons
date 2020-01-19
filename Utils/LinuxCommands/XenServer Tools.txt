@@ -1,0 +1,8 @@
+XenServer Tools:
+
+
+sudo mount /dev/cdrom /mnt
+cd /mnt/Linux
+sudo ./install.sh
+Press y to continue install.
+sudo reboot

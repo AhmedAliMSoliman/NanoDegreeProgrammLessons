@@ -1,0 +1,9 @@
+How to Remove a Storage Repository from XenServer
+
+
+
+
+xe sr-list name-label=<Name of the SR>
+xe pbd-list sr-uuid=<UUID of SR>
+xe pbd-unplug uuid=<UUID of PBD>
+xe sr-forget uuid=<UUID of SR>
