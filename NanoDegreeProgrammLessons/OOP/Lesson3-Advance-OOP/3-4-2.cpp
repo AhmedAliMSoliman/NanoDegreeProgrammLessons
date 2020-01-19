@@ -28,19 +28,26 @@ public:
     bool sunroof = false;
 };
 
-class Bicycle : public Vehicle {
+class Bicycle : protected Vehicle {
 public:
     bool kickstand = true;
+    void PrintPrint() {Print(); }
 };
 
-class Scooter : public Vehicle {
+class Scooter : private Vehicle {
 public:
     bool electric = false;
+    void PrintPrint() {Print(); }
 };
 
 int main() 
 {
     Car car;
+    car.Print();
+    
     Bicycle bicycle;
+    bicycle.PrintPrint();
+
     Scooter scooter;
+    scooter.PrintPrint();
 };
