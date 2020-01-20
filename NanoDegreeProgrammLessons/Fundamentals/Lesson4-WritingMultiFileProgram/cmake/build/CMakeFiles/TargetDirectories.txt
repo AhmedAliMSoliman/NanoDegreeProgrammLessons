@@ -1,3 +1,0 @@
-/root/nano-degree/nanodegree_lessons/Lesson4-WritingMultiFileProgram/cmake/build/CMakeFiles/rebuild_cache.dir
-/root/nano-degree/nanodegree_lessons/Lesson4-WritingMultiFileProgram/cmake/build/CMakeFiles/thefinalexe.dir
-/root/nano-degree/nanodegree_lessons/Lesson4-WritingMultiFileProgram/cmake/build/CMakeFiles/edit_cache.dir
