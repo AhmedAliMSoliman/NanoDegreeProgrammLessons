@@ -6,7 +6,7 @@ private:
     int rate_{80};
     friend class Human;
 };
-
+ 
 class Human 
 {
 public: 
