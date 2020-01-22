@@ -8,13 +8,13 @@ public:
     std::string Driveing() { return "I'am Driving" ; }
 };
 
-class Boat
+class Boat : public Car
 {
 public: 
     std::string Cruise() { return "I'am Cruising" ; }
 };
 
-class Amphibious : public Car , public Boat
+class Amphibious : public Boat
 {
 
 };
@@ -24,6 +24,6 @@ int main()
     Car car;
     Boat boat;
     Amphibious douck; 
+
     assert(car.Driveing() == douck.Driveing());
-    assert(boat.Cruise() == douck.Cruise());
 }
