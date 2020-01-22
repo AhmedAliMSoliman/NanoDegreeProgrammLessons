@@ -15,9 +15,19 @@ public:
         std::cout << "Hello\n";
     }
 };
+class Babe : public Animal
+{
+public:
+    void Talk() const
+    {
+        std::cout << "Way\n";
+    }
+};
 
 int main()
 {
     Human human;
     human.Talk();
+    Babe babe;
+    babe.Talk();
 }

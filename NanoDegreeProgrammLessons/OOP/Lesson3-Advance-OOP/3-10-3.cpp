@@ -16,7 +16,8 @@
 class Point
 {
 public: 
-    Point(int a=0 , int b=0) : x_(a) , y_(b) {}
+    Point() = default; 
+    Point(int a , int b ) : x_(a) , y_(b) {}
 
     Point operator+(const Point& plus)
     {
@@ -25,9 +26,9 @@ public:
         sum.y_ = y_ + plus.y_;
         return sum;
     }
-private: 
-    int x_ ;
-    int y_ ; 
+public: 
+    int x_;
+    int y_; 
 };
 
 // Test in main()
@@ -35,7 +36,7 @@ int main()
 {
   Point p1(10, 5);
   Point p2(2, 4);
-//   Point p3 = p1 + p2; // An example call to "operator +";
-//   assert(p3.x == p1.x + p2.x);
-//   assert(p3.y == p1.y + p2.y);
+  Point p3 = p1 + p2; // An example call to "operator +";
+  assert(p3.x_ == p1.x_ + p2.x_);
+  assert(p3.y_ == p1.y_ + p2.y_);
 }
