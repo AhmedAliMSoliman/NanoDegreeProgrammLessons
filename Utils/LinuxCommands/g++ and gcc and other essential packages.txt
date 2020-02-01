@@ -1,3 +1,0 @@
-install g++ and gcc and other essential packages:
-$ sudo apt install build-essential
-$g++ --version
