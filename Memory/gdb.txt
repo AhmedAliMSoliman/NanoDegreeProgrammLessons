@@ -1,0 +1,50 @@
+root@AhmedAliMSoliman530S:~/AHMED/NanoDegreeProgrammLessons/Memory# g++ -g 1.cpp 
+root@AhmedAliMSoliman530S:~/AHMED/NanoDegreeProgrammLessons/Memory# gdb a.out 
+GNU gdb (Ubuntu 8.1-0ubuntu3.2) 8.1.0.20180409-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) list
+1       #include <stdio.h>
+2
+3       int main()
+4       {
+5           char str1[] = "UDACITY";
+6           printf("%s", str1);
+7
+8           return 0;
+9       }(gdb) 
+Line number 10 out of range; 1.cpp has 9 lines.
+(gdb) break 5
+Breakpoint 1 at 0x6c1: file 1.cpp, line 5.
+(gdb) run
+Starting program: /root/AHMED/NanoDegreeProgrammLessons/Memory/a.out 
+
+Breakpoint 1, main () at 1.cpp:5
+5           char str1[] = "UDACITY";
+(gdb) step
+6           printf("%s", str1);
+(gdb) p str1
+$1 = "UDACITY"
+(gdb) p &str1
+$2 = (char (*)[8]) 0x7ffffffee460
+(gdb) x/7tb
+Argument required (starting display address).
+(gdb) x/7tb
+Argument required (starting display address).
+(gdb) x/7tb 0x7ffffffee460
+0x7ffffffee460: 01010101        01000100        01000001        01000011        01001001     01010100 01011001
+(gdb) x/7tx 0x7ffffffee460
+0x7ffffffee460: 0x55    0x44    0x41    0x43    0x49    0x54    0x59
+(gdb) 
