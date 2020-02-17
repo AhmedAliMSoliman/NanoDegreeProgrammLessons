@@ -1,0 +1,1 @@
+ valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=/root/AHMED/NanoDegreeProgrammLessons/3-MemoryMangment/Lesson4-DynamicMemoryAllocationHEAP/typical/memory_leaks_debugging.txt /root/AHMED/NanoDegreeProgrammLessons/3-MemoryMangment/Lesson4-DynamicMemoryAllocationHEAP/typical/a.out

@@ -1,0 +1,122 @@
+==20558== Memcheck, a memory error detector
+==20558== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==20558== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info
+==20558== Command: /root/AHMED/NanoDegreeProgrammLessons/3-MemoryMangment/Lesson4-DynamicMemoryAllocationHEAP/typical/a.out
+==20558== Parent PID: 20455
+==20558== 
+--20558-- 
+--20558-- Valgrind options:
+--20558--    --leak-check=full
+--20558--    --show-leak-kinds=all
+--20558--    --track-origins=yes
+--20558--    --verbose
+--20558--    --log-file=/root/AHMED/NanoDegreeProgrammLessons/3-MemoryMangment/Lesson4-DynamicMemoryAllocationHEAP/typical/memory_leaks_debugging.txt
+--20558-- Contents of /proc/version:
+--20558--   Linux version 4.4.0-18362-Microsoft (Microsoft@Microsoft.com) (gcc version 5.4.0 (GCC) ) #476-Microsoft Fri Nov 01 16:53:00 PST 2019
+--20558-- 
+--20558-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--20558-- Page sizes: currently 4096, max supported 4096
+--20558-- Valgrind library directory: /usr/local/lib/valgrind
+--20558-- Reading syms from /root/AHMED/NanoDegreeProgrammLessons/3-MemoryMangment/Lesson4-DynamicMemoryAllocationHEAP/typical/a.out
+--20558-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--20558--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--20558--   .. CRC mismatch (computed 1b7c895e wanted 2943108a)
+--20558--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--20558--   .. CRC is valid
+--20558-- Reading syms from /usr/local/lib/valgrind/memcheck-amd64-linux
+--20558--    object doesn't have a dynamic symbol table
+--20558-- Scheduler: using generic scheduler lock implementation.
+--20558-- Reading suppressions file: /usr/local/lib/valgrind/default.supp
+==20558== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-20558-by-root-on-???
+==20558== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-20558-by-root-on-???
+==20558== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-20558-by-root-on-???
+==20558== 
+==20558== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==20558== don't want to do, unless you know exactly what you're doing,
+==20558== or are doing some strange experiment):
+==20558==   /usr/local/lib/valgrind/../../bin/vgdb --pid=20558 ...command...
+==20558== 
+==20558== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==20558==   /path/to/gdb /root/AHMED/NanoDegreeProgrammLessons/3-MemoryMangment/Lesson4-DynamicMemoryAllocationHEAP/typical/a.out
+==20558== and then give GDB the following command
+==20558==   target remote | /usr/local/lib/valgrind/../../bin/vgdb --pid=20558
+==20558== --pid is optional if only one valgrind process is running
+==20558== 
+==20558== error calling PR_SET_PTRACER, vgdb might block
+--20558-- REDIR: 0x401f2f0 (ld-linux-x86-64.so.2:strlen) redirected to 0x3805f971 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--20558-- REDIR: 0x401f0d0 (ld-linux-x86-64.so.2:index) redirected to 0x3805f98b (vgPlain_amd64_linux_REDIR_FOR_index)
+--20558-- Reading syms from /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
+--20558-- Reading syms from /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+==20558== WARNING: new redirection conflicts with existing -- ignoring it
+--20558--     old: 0x0401f2f0 (strlen              ) R-> (0000.0) 0x3805f971 vgPlain_amd64_linux_REDIR_FOR_strlen
+--20558--     new: 0x0401f2f0 (strlen              ) R-> (2007.0) 0x04c32bf0 strlen
+--20558-- REDIR: 0x401d360 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c33d20 (strcmp)
+--20558-- REDIR: 0x401f830 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c37330 (mempcpy)
+--20558-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+--20558--    object doesn't have a symbol table
+--20558-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--20558--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--20558--   .. CRC mismatch (computed b1c74187 wanted 042cc048)
+--20558--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--20558--   .. CRC is valid
+--20558-- Reading syms from /lib/x86_64-linux-gnu/libm-2.27.so
+--20558--   Considering /lib/x86_64-linux-gnu/libm-2.27.so ..
+--20558--   .. CRC mismatch (computed 7feae033 wanted b29b2508)
+--20558--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.27.so ..
+--20558--   .. CRC is valid
+--20558-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--20558--    object doesn't have a symbol table
+--20558-- REDIR: 0x5263c70 (libc.so.6:memmove) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262d40 (libc.so.6:strncpy) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263f50 (libc.so.6:strcasecmp) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262790 (libc.so.6:strcat) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262d70 (libc.so.6:rindex) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x52657c0 (libc.so.6:rawmemchr) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263de0 (libc.so.6:mempcpy) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263c10 (libc.so.6:bcmp) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262d00 (libc.so.6:strncmp) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262800 (libc.so.6:strcmp) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263d40 (libc.so.6:memset) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x52810f0 (libc.so.6:wcschr) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262ca0 (libc.so.6:strnlen) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262870 (libc.so.6:strcspn) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263fa0 (libc.so.6:strncasecmp) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262840 (libc.so.6:strcpy) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x52640e0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262da0 (libc.so.6:strpbrk) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x52627c0 (libc.so.6:index) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5262c70 (libc.so.6:strlen) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x526d6c0 (libc.so.6:memrchr) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263ff0 (libc.so.6:strcasecmp_l) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263be0 (libc.so.6:memchr) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5281eb0 (libc.so.6:wcslen) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263050 (libc.so.6:strspn) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263f20 (libc.so.6:stpncpy) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5263ef0 (libc.so.6:stpcpy) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x52657f0 (libc.so.6:strchrnul) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x5264040 (libc.so.6:strncasecmp_l) redirected to 0x4a2a6de (_vgnU_ifunc_wrapper)
+--20558-- REDIR: 0x53533c0 (libc.so.6:__strrchr_avx2) redirected to 0x4c32570 (rindex)
+--20558-- REDIR: 0x525c070 (libc.so.6:malloc) redirected to 0x4c2faad (malloc)
+--20558-- REDIR: 0x4ecf2f0 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x4c307f9 (operator new[](unsigned long))
+--20558-- REDIR: 0x525c950 (libc.so.6:free) redirected to 0x4c30c5a (free)
+==20558== 
+==20558== HEAP SUMMARY:
+==20558==     in use at exit: 40 bytes in 1 blocks
+==20558==   total heap usage: 2 allocs, 1 frees, 72,744 bytes allocated
+==20558== 
+==20558== Searching for pointers to 1 not-freed blocks
+==20558== Checked 109,824 bytes
+==20558== 
+==20558== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==20558==    at 0x4C30867: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==20558==    by 0x10868B: main (in /root/AHMED/NanoDegreeProgrammLessons/3-MemoryMangment/Lesson4-DynamicMemoryAllocationHEAP/typical/a.out)
+==20558== 
+==20558== LEAK SUMMARY:
+==20558==    definitely lost: 40 bytes in 1 blocks
+==20558==    indirectly lost: 0 bytes in 0 blocks
+==20558==      possibly lost: 0 bytes in 0 blocks
+==20558==    still reachable: 0 bytes in 0 blocks
+==20558==         suppressed: 0 bytes in 0 blocks
+==20558== 
+==20558== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==20558== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
