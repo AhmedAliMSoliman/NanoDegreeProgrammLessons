@@ -1,0 +1,6 @@
+Own address on the stack is 0x7ffff4e79fb0
+Managing memory block on the heap at 0x7fffedd2de70
+Own address on the stack is 0x7ffff4e79fb8
+Managing memory block on the heap at 0x7fffedd2de70
+Own address on the stack is 0x7ffff4e79fc0
+Managing memory block on the heap at 0x7fffedd2de70
