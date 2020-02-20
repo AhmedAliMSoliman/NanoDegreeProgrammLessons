@@ -31,7 +31,7 @@ int main()
     myClass2.printMemberAddress();
 
     //copy object 2 into object 3
-    MyClass myClass3(myClass2);
+    MyClass myClass3 = myClass2;
     myClass3.printOwnAddress();
     myClass3.printMemberAddress();
 
