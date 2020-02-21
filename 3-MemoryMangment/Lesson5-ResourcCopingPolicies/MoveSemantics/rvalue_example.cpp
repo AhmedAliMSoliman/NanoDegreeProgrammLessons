@@ -7,6 +7,7 @@ void myFunction(int &&val)
 
 int main()
 {
+    int i = 42;
     myFunction(42);
 
     return 0; 
