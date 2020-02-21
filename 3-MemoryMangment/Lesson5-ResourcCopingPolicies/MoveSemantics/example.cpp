@@ -1,5 +1,7 @@
 #include <iostream>
 
+//Rule of THREE
+
 class MyMovableClass
 {
 private:
