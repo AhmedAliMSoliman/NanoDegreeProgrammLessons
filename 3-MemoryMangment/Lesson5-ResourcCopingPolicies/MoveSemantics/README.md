@@ -164,6 +164,8 @@ The move constructor: Because copying objects can be an expensive operation whic
 The move assignment operator: With this operator, ownership of a resource can be transferred from one object to another. The internal behavior is very similar to the move constructor.
 
 When are move semantics used?
+==============================
+
 Now that we have seen how move semantics work, let us take a look at situations where they actually apply.
 
 One of the primary areas of application are cases, where heavy-weight objects need to be passed around in a program. Copying these without move semantics can cause series performance issues. The idea in this scenario is to create the object a single time and then "simply" move it around using rvalue references and move semantics.

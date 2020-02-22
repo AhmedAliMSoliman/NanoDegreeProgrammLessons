@@ -25,6 +25,7 @@ public:
         *_data = *source._data;
         std::cout << "COPING content of instance " << &source << " to instance " << this << std::endl;
     }
+
     MyMovableClass &operator=(const MyMovableClass &source)   //3: Assignment Operator
     {
         if (this == &source)
@@ -37,7 +38,34 @@ public:
         _size = source._size;
         return *this;
     }
+
+    MyMovableClass(MyMovableClass &&source) // 4 : move constructor
+    {
+        std::cout << "MOVING (c’tor) instance " << &source << " to instance " << this << std::endl;
+        _data = source._data;
+        _size = source._size;
+        source._data = nullptr;
+        source._size = 0;
+    }
+
+        MyMovableClass &operator=(MyMovableClass &&source) // 5 : move assignment operator
+    {
+        std::cout << "MOVING (assign) instance " << &source << " to instance " << this << std::endl;
+        if (this == &source)
+            return *this;
+
+        delete[] _data;
+
+        _data = source._data;
+        _size = source._size;
+
+        source._data = nullptr;
+        source._size = 0;
+
+        return *this;
+    }
 };
+
 
 int main()
 {
