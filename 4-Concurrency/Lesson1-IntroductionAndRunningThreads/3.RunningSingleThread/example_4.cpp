@@ -12,10 +12,12 @@ void ThreadFunctiin()
     std::cout << "Finished work -2- the thread function\n";
 }
 
+
+
 int main()
 {
     //create thred
-    std::thread t(ThreadFunctiin);
+    std::thread thread_obj(ThreadFunctiin);
 
     //do somthing in main
     std::this_thread::sleep_for(std::chrono::milliseconds(50)); // Simulate work
@@ -25,7 +27,7 @@ int main()
     std::cout << "Finished work -2- in main function\n";
 
     //wait for thread to finish
-    t.join();
+    thread_obj.join();
 }
 
 
