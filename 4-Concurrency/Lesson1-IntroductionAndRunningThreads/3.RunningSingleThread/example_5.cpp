@@ -18,7 +18,8 @@ int main()
     std::thread t(ThreadFunctiin);
 
     //wait for thread to finish
-    t.join();
+    // t.join();
+    t.detach();
 
     //do somthing in main
     std::this_thread::sleep_for(std::chrono::milliseconds(50)); // Simulate work

@@ -19,6 +19,8 @@ int main()
     //create thred
     std::thread thread_obj(ThreadFunctiin);
 
+    
+
     //do somthing in main
     std::this_thread::sleep_for(std::chrono::milliseconds(50)); // Simulate work
     std::cout << "Finished work -1- in main function\n";
