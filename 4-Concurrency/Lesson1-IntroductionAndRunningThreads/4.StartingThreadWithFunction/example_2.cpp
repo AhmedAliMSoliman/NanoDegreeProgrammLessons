@@ -8,13 +8,24 @@ public:
     {
         std::cout << "Vehicle object has been created \n" << std::endl;
     }
+
+    
 };
 
+class Car
+{
+public:
+    void Print()
+        {
+            std::cout << "===================================\n" << std::endl;
+        }
+};
 
 int main()
 {
     // create thread 
     //std::thread t0(Vehicle()); // C++'s most vexing parse
+
     
     std::thread t1( (Vehicle()) ); // Add an extra pair of parantheses
     
@@ -29,6 +40,10 @@ int main()
     t1.join();
     t2.join();
     t3.join();
+
+
+    Vehicle vec;
+    vec.operator()();
 
     return 0;
 }

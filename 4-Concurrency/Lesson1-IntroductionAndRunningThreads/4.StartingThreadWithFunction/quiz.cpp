@@ -26,3 +26,11 @@ int main()
 
     return 0;
 }
+
+
+// b) ID in Lambda = 1
+// c) ID in Main = 0
+// d) ID in Lambda = 1
+// e) ID in Main = 1
+// f) ID in Lambda = 2
+// a) ID in Lambda = 2

@@ -13,13 +13,16 @@ int main()
     id++;
     auto f2 = [&id]() { std::cout << "ID = " << id << std::endl; }; // OK, 'id' is captured by reference
 
-    //auto f3 = [id]() { std::cout << "ID = " << ++id << std::endl; }; // Error, 'id' may not be modified
+    // auto f3 = [id]() { std::cout << "ID = " << ++id << std::endl; }; // Error, 'id' may not be modified
+
+    id++;
 
     auto f4 = [id]() mutable { std::cout << "ID = " << ++id << std::endl; }; // OK, 'id' may be modified
 
     // execute lambdas
     f1();
     f2();
+    // f3();
     f4();
 
     return 0;
