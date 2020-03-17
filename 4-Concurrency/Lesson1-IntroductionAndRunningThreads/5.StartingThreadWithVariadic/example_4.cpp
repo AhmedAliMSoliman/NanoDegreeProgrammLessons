@@ -18,7 +18,7 @@ private:
 int main()
 {
     // create thread
-    Vehicle v1, v2;
+    Vehicle v1, v2; // stack
     std::thread t1 = std::thread(&Vehicle::addID, v1, 1); // call member function on object v
     std::thread t2 = std::thread(&Vehicle::addID, &v2, 2); // call member function on object v
 

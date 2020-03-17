@@ -22,11 +22,12 @@ int main()
     // starting threads using variadic templates
     std::thread t1(printID, id);
     std::thread t2(printIDAndName, ++id, "MyString");
-    std::thread t3(printIDAndName, ++id); // this procudes a compiler error
+    std::thread t3(printIDAndName, ++id, "2nd argu"); // this procudes a compiler error
 
     // wait for threads before returning
     t1.join();
     t2.join();
+    // t3.join();
     //t3.join();
 
 
