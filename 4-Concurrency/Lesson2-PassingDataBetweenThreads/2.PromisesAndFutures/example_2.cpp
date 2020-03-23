@@ -1,3 +1,13 @@
+
+// promise_future_communication_channel_ex_2.cpp
+
+/* [Description] 
+ *
+ * In the following example:
+ * we want to declare a promise which allows for transmitting a string 
+ * between two threads and modifying it in the process.
+ */
+
 #include <iostream>
 #include <thread>
 #include <future>
@@ -33,3 +43,16 @@ int main()
 
     return 0;
 }
+
+
+/* [Output]
+ * Original message from main(): My Message
+ * Modified message from thread(): My Message has been modified
+ * 
+ * [Explain]
+ * Back in the main thread, after starting the thread, the original message is printed to the console. 
+ * Then, we start listening on the other end of the communication channel by calling the function get() on the future. 
+ * This method will block until data is available - which happens as soon as set_value has been called on the promise (from the thread). 
+ * If the result is movable (which is the case for std::string), it will be moved - otherwise it will be copied instead. 
+ * After the data has been received (with a considerable delay), the modified message is printed to the console.
+ */

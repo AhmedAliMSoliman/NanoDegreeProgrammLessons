@@ -1,4 +1,23 @@
-    #include <iostream>
+
+
+// promise_future_communication_channel_ex_1.cpp
+
+/* [Description] 
+ *
+ * In this section, we want to look at a way to pass data in the opposite direction - 
+ * that is from the worker threads back to the parent thread.
+ *
+ * In order to achieve this, the threads need to adhere to a strict synchronization protocol. 
+ * There is a such a mechanism available in the C++ standard that we can use for this purpose. 
+ * This mechanism acts as a single-use channel between the threads. 
+ * The sending end of the channel is called "promise" while the receiving end is called "future".
+ * 
+ * In the C++ standard, the class template std::promise provides a convenient way to store
+ * a value or an exception that will acquired asynchronously at a later time via a std::future object. 
+ * Each std::promise object is meant to be used only a single time.
+ */
+
+#include <iostream>
 #include <thread>
 
 void printMessage(std::string message)
