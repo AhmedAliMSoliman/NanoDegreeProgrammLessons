@@ -1,3 +1,16 @@
+
+
+// Passing exceptions
+
+/* [Description]
+ * 
+ * he future-promise communication channel may also be used for passing exceptions. 
+ * To do this, the worker thread simply sets an exception rather than a value in the promise. 
+ * In the parent thread, the exception is then re-thrown once get() is called on the future.
+ * Let us take a look at the following example to see how this mechanism works:
+ *
+ * */
+
 #include <iostream>
 #include <thread>
 #include <future>
@@ -46,3 +59,10 @@ int main()
 
     return 0;
 }
+
+
+/* [Output]
+ * 
+ * Exception from thread: Division by zero!
+ * 
+ * */
