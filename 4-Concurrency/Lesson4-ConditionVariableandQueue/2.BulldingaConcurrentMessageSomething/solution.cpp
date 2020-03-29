@@ -3,6 +3,7 @@
 #include <queue>
 #include <future>
 #include <mutex>
+#include <algorithm>
 
 template <class T>
 class MessageQueue
