@@ -113,6 +113,12 @@ while (true) {
 }
 ```
 
+
+sol:
+A) For the code in choice A), the frame_duration continues to increase during the duration of the game, and can't be used to check the frame rate for a single iteration of the game loop.
+B) Great work! If the time for this frame is too small (i.e. frame_duration is smaller than the target_frame_duration), we want delay the loop to achieve the correct frame rate.
+C) For the code in choice C), after records the amount of time that has passed for the entire Input, Update, Render, and Sleep iteration. Because Sleep is included in the time recorded by frame_end, this code doesn't correctly time the game loop.
+
 ## Summary
 Excellent work on completing this concept! You know have a solid understanding of one of the core concepts of game programming: the game loop. With the addition of a library to handle input and render output from your code, you are now fully prepared to write your own games in C++.
 
@@ -121,3 +127,4 @@ In the next concept, we will introduce the SDL2 library that you can use to hand
 ## Resources
 The Game Programming Patterns Book is an excellent resource for understanding how games work. In particular, here is a section of the book which discusses the game loop.
 Here is another useful article on the game loop. This one uses the SDL library, which is the same library used in the Snake game repository.
+https://www.informit.com/articles/article.aspx?p=2928180&seqNum=4 
