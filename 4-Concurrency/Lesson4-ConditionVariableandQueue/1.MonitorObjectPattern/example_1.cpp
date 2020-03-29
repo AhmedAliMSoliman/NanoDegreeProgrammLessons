@@ -2,6 +2,7 @@
 #include <thread>
 #include <vector>
 #include <future>
+#include <algorithm>
 #include <mutex>
 
 class Vehicle
@@ -48,7 +49,7 @@ int main()
     // create monitor object as a shared pointer to enable access by multiple threads
     std::shared_ptr<WaitingVehicles> queue(new WaitingVehicles);
 
-    std::cout << "Spawning threads..." << std::endl;
+    std::cout << "Spawning threads ..." << std::endl;
     std::vector<std::future<void>> futures;
     for (int i = 0; i < 10; ++i)
     {
@@ -61,7 +62,7 @@ int main()
         ftr.wait();
     });
 
-    std::cout << "Collecting results..." << std::endl;
+    std::cout << "Collecting results ..." << std::endl;
     queue->printIDs();
 
     return 0;
